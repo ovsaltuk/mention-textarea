@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { MentionTextarea, User } from './components/MentionTextarea/MentionTextarea';
+
+   const usersMock: User[] = [
+    { id: '1', name: 'Иван Иванов', username: 'ivanov' },
+    { id: '2', name: 'Мария Петрова', username: 'petrova' },
+    { id: '3', name: 'Пётр Сидоров', username: 'sid' },
+    
+  ];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Mention Textarea test</h1>
+      <MentionTextarea users={usersMock} />
+    </>
   );
 }
 
