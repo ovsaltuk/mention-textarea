@@ -160,7 +160,6 @@ export const MentionTextarea = forwardRef<HTMLTextAreaElement, MentionTextareaPr
     const insertMention = (user: User) => {
       if (!mentionState || !textareaRef.current) return;
 
-      const textarea = textareaRef.current;
       const start = mentionState.startIndex;
       const end = mentionState.endIndex;
 
@@ -236,7 +235,7 @@ export const MentionTextarea = forwardRef<HTMLTextAreaElement, MentionTextareaPr
 
       window.addEventListener("scroll", updatePositionOnScroll, true);
       return () => window.removeEventListener("scroll", updatePositionOnScroll, true);
-    }, [mentionState]);
+    }, [mentionState, updateDropdownPosition]);
 
     return (
       <div className="mention-textarea-container">
